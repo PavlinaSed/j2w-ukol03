@@ -1,3 +1,49 @@
+# Task 3
+
+The goal is to create a web page to display business cards. The home page will display a list of all business cards, from each business card it will be possible to click on
+its detail, where a map will be displayed along with the business card.
+
+The project contains a controller and the corresponding HTML pages (already in the `src/main/resources/templates` directory). However, only hardcoded text is on the page. You need
+modify the controller to provide data to the model, and modify the templates to display the data from the model.
+
+Expect *name* and *company* to always be listed, as well as the two address lines. However, the contacts (email, phone and website) may or may not be filled in
+- For example, only email may be filled in, or perhaps only phone and web.
+
+1. Run the cloned application and open the [http://localhost:8080/](http://localhost:8080/) page in your browser. You will see a page with four business cards.
+   Click on any of the business cards to see an example with the details of one business card - there is only one business card, along with a map showing the address listed on the business card.
+1. Create an entity e.g. `Card` which will contain the following properties - the details displayed on the business card:
+   * `name`
+   * `company`
+   * `street`
+   * `municipalityPsc`
+   * `address` (readonly property, of the form "`street`, `genericPsc`")
+   * `email`
+   * `phone`
+   * `web`
+1. Create a parameterless constructor in this entity and a constructor containing all properties with stored value (i.e. without the counted property `targetAddress`).
+1. Create a private field in the `VizitkaController` containing a list of business cards (`List<Vizitka>`) and populate the list with some data. Don't forget
+   create business cards that don't have all the contacts listed.
+1. Edit the `list()` method to return `ModelAndView`. Choose the correct view and insert the list of business cards into the model.
+1. Edit the `list.html` template to display the business cards from the model. Each business card must link to its detail page.
+1. Edit the `detail()` method to return `ModelAndView`. Modify the method to retrieve the query parameter `id` from the browser request. Select the correct view and add the
+   model, insert the business card retrieved from the list based on the `id` (index in the list).
+1. Edit the `detail.html` template to display the business card from the model.
+1. To display the map, use the prepared code with the `iframe` tag to insert the embedded Mapy.cz map. The `q` parameter is passed to the URL to be
+   to be displayed on the map. This address needs to be encoded using the built-in Freemarker `url` function. Instead of a static string with the address of Czechitas on Wenceslas Square
+   Square, pass the `celaAddress` property (note that the static string is already embedded in the `${...}` interpolation, so you don't add it to the template).
+
+   
+### Links
+
+* Link to [Lesson 4](https://java.czechitas.cz/2024-jaro/java-2-online/lekce-4.html)
+* Java SE 21 [Javadoc](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/) - documentation of all the classes that are part of the base Java version 21.
+* Documentation [Spring Boot](https://spring.io/projects/spring-boot#learn) - from here the annotation `@SpringBootApplication` and the class `SpringApplication`.
+* The [Spring Framework](https://spring.io/projects/spring-framework#learn) documentation - from here are the `@Controller`, `@GetRequest` annotations and the `ModelAndView` class.
+* Documentation [Freemarker](https://freemarker.apache.org/docs/index.html) - the templating system for HTML used in the project.
+* [Unsplash](https://unsplash.com) - free images and photos to use
+* [LineAwesome](https://icons8.com/line-awesome) - a set of icons for use on the web
+
+
 # Úkol 3
 
 Cílem je vytvořit webovou stránku pro zobrazení vizitek. Úvodní stránka bude zobrazovat seznam všech vizitek, z každé vizitky bude možné se prokliknout na
@@ -37,6 +83,7 @@ Počítej s tím, že *jméno* a *firma* budou vždy uvedené, stejně jako dva 
 1. *Commitni* a *pushnni* změny (výsledný kód) do svého repository na GitHubu.
 1. Vlož odkaz na své repository jako řešení úkolu na portálu [Moje Czechitas](https://moje.czechitas.cz).
 
+
 ### Odkazy
 
 * odkaz na stránku [Lekce 4](https://java.czechitas.cz/2024-jaro/java-2-online/lekce-4.html)
@@ -46,3 +93,4 @@ Počítej s tím, že *jméno* a *firma* budou vždy uvedené, stejně jako dva 
 * Dokumentace [Freemarker](https://freemarker.apache.org/docs/index.html) – šablonovací systém pro HTML použitý v projektu.
 * [Unsplash](https://unsplash.com) – obrázky a fotografie k použití zdarma
 * [LineAwesome](https://icons8.com/line-awesome) – sada ikon pro použití na webu
+
