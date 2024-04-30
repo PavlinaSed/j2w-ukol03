@@ -15,13 +15,13 @@ Expect *name* and *company* to always be listed, as well as the two address line
    * `name`
    * `company`
    * `street`
-   * `municipalityPsc`
-   * `address` (readonly property, of the form "`street`, `genericPsc`")
+   * `municipalityZipCode`
+   * `completeAddress` (readonly property, of the form "`street`, `genericZipCode`")
    * `email`
    * `phone`
    * `web`
-1. Create a parameterless constructor in this entity and a constructor containing all properties with stored value (i.e. without the counted property `targetAddress`).
-1. Create a private field in the `VizitkaController` containing a list of business cards (`List<Vizitka>`) and populate the list with some data. Don't forget
+1. Create a parameterless constructor in this entity and a constructor containing all properties with stored value (i.e. without the counted property `completeAddress`).
+1. Create a private field in the `CardController` containing a list of business cards (`List<Card>`) and populate the list with some data. Don't forget
    create business cards that don't have all the contacts listed.
 1. Edit the `list()` method to return `ModelAndView`. Choose the correct view and insert the list of business cards into the model.
 1. Edit the `list.html` template to display the business cards from the model. Each business card must link to its detail page.
@@ -30,7 +30,7 @@ Expect *name* and *company* to always be listed, as well as the two address line
 1. Edit the `detail.html` template to display the business card from the model.
 1. To display the map, use the prepared code with the `iframe` tag to insert the embedded Mapy.cz map. The `q` parameter is passed to the URL to be
    to be displayed on the map. This address needs to be encoded using the built-in Freemarker `url` function. Instead of a static string with the address of Czechitas on Wenceslas Square
-   Square, pass the `celaAddress` property (note that the static string is already embedded in the `${...}` interpolation, so you don't add it to the template).
+   Square, pass the `completeAddress` property (note that the static string is already embedded in the `${...}` interpolation, so you don't add it to the template).
 
    
 ### Links
