@@ -1,15 +1,15 @@
 package cz.czechitas.java2webapps.ukol3.entity;
 
 public class Card {
-private String name;
-private String company;
-private String street;
-private String municipality;
-private String zipCode;
-private String completeAdress;
-private String email;
-private String phone;
-private String web;
+    private String name;
+    private String company;
+    private String street;
+    private String municipality;
+    private String zipCode;
+    private String completeAdress;
+    private String email;
+    private String phone;
+    private String web;
 
     public Card(String name, String company, String street, String municipality, String zipCode, String email, String phone, String web) {
         this.name = name;
