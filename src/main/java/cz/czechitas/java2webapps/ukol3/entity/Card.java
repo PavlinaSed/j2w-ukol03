@@ -6,7 +6,7 @@ public class Card {
     private String street;
     private String municipality;
     private String zipCode;
-    private String completeAdress;
+    private String completeAddress;
     private String email;
     private String phone;
     private String web;
@@ -65,8 +65,8 @@ public class Card {
         this.zipCode = zipCode;
     }
 
-    public String getCompleteAdress() {
-        return completeAdress;
+    public String getCompleteAddress() {
+        return street + ", " + municipality + zipCode;
     }
 
     public String getEmail() {
