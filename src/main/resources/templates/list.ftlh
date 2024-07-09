@@ -25,7 +25,7 @@
                 <div class="kontakty">
                     <div><i class="las la-at"></i> [#if card.email??] <span>${card.email}</span>[#else]<small><em>not specified</em></small>[/#if]</div>
                     <div><i class="las la-phone-alt"></i>[#if card.phone??]<span>${card.phone}</span>[#else]<small><em>not specified</em></small>[/#if]</div>
-                    <div><i class="las la-globe"></i> <span>${card.web}</span></div>
+                    <div><i class="las la-globe"></i>[#if card.web??]<span>${card.web}</span>[#else]<small><em>not specified</em></small>[/#if]</div>
                 </div>
             </div>
         </div>

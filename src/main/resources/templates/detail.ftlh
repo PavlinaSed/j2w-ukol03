@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
-<div class="detail">
+<div class="detail">()
     <div class="vizitka">
         <div class="jmeno">${cardDetail.name}</div>
         <div class="firma">${cardDetail.company}</div>
@@ -21,7 +21,7 @@
                 <div><span>${cardDetail.zipCode}</span> ${cardDetail.municipality}</div>
             </div>
             <div class="kontakty">
-                <div><i class="las la-at"></i> [#if cardDetail.email??]<span>${cardDetail.email}</span>[#else]<small><em>not specified</em></small>[/#if]</div>
+                <div><i class="las la-at"></i>  [#if cardDetail.email??]<span>${cardDetail.email}</span>[#else]<small><em>not specified</em></small>[/#if]</div>
                 <div><i class="las la-phone-alt"></i> [#if cardDetail.phone??]<span>${cardDetail.phone}</span>[#else]<small><em>not specified</em></small>[/#if]</div>
                 <div><i class="las la-globe"></i> <span>${cardDetail.web}</span></div>
             </div>
